@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProfilRepository;
 use Doctrine\Common\Collections\Collection;
@@ -36,6 +37,7 @@ class Profil
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message = "le libellé ne peut pas être vide")
      */
     private $libelle;
 

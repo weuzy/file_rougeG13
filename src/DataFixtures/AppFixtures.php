@@ -22,7 +22,8 @@ class AppFixtures extends Fixture
         $profils = ["ADMIN", "FORMATEUR", "APPRENANT", "CM"];
         foreach ($profils as $key => $libelle) {
            $profil = new Profil();
-           $profil -> setLibelle($libelle);
+           $profil -> setLibelle($libelle)
+                   -> setArchives(0);
            $manager -> persist($profil);
            for ($i=1; $i <3 ; $i++) { 
               $user = new User();
@@ -30,10 +31,11 @@ class AppFixtures extends Fixture
                     -> setNom($faker -> lastName)
                     -> setEmail($faker -> email)
                     -> setUsername(strtolower ($libelle).$i)
-                    -> setGenre($faker -> randomElement(["M,F"])) 
-                    -> setAvatar('default.png')
+                    -> setGenre($faker -> randomElement(["M","F"])) 
+                    -> setPhoto($faker -> imageUrl($width = 640, $height = 480))
                     -> setTelephone($faker -> phoneNumber)
-                    -> setProfil($profil);
+                    -> setProfil($profil)
+                    -> setArchives(0);
               $pass  =  $this -> password -> encodePassword($user, "cbagcrack");
               $user -> setPassword($pass);
               $manager -> persist($user);
