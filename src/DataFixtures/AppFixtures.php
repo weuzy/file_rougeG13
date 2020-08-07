@@ -2,22 +2,43 @@
 
 namespace App\DataFixtures;
 
+use Faker\Factory;
+use App\Entity\User;
+use App\Entity\Profil;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use App\Entity\User;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
 {
+    private $password;
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this -> password = $encoder;
+    }
     public function load(ObjectManager $manager)
     {
-        // $product = new Product();
-        // $manager->persist($product);
-        $user=new User();
-        $user->setUsername('admin');
-        $user->setPassword('diakhate');
-        $user->setRoles(["ROLE_ADMIN"]);
-        $manager->persist($user);
-
-        $manager->flush();
+        $faker = Factory::create('fr_FR');
+        $profils = ["ADMIN", "FORMATEUR", "APPRENANT", "CM"];
+        foreach ($profils as $key => $libelle) {
+           $profil = new Profil();
+           $profil -> setLibelle($libelle);
+           $manager -> persist($profil);
+           for ($i=1; $i <3 ; $i++) { 
+              $user = new User();
+              $user -> setPrenom($faker -> firstName)
+                    -> setNom($faker -> lastName)
+                    -> setEmail($faker -> email)
+                    -> setUsername(strtolower ($libelle).$i)
+                    -> setGenre($faker -> randomElement(["M,F"])) 
+                    -> setAvatar('default.png')
+                    -> setTelephone($faker -> phoneNumber)
+                    -> setProfil($profil);
+              $pass  =  $this -> password -> encodePassword($user, "cbagcrack");
+              $user -> setPassword($pass);
+              $manager -> persist($user);
+              $manager -> flush();
+           }
+        }
     }
 }
