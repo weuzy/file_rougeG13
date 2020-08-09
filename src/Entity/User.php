@@ -8,18 +8,26 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Controller\ArchivageUser;
 use App\Repository\UserRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(
+ *  fields = {"email", "username"},
+ *  message = "le nom d'utilisateur ou l'email est déjà utilisé, veuillez choisir un autre!"
+ * )
  * @ApiResource(
-    *normalizationContext = {"groups":"read"},
-    *denormalizationContext = {"groups":"write"},
+    *normalizationContext = {"groups":"user:read"},
+    *denormalizationContext = {"groups":"user:write"},
     * attributes = {
         *"security" = "is_granted('ROLE_ADMIN')",
-        *"security_message" = "vous n'avez pas accés à cette ressource"
+        *"security_message" = "vous n'avez pas accés à cette ressource",
+        *"pagination_enabled" = true,
+        *"pagination_items_per_page" = 3
     *},
     *collectionOperations = {"post", "get"},
     *itemOperations = {"put","get", "delete_user" = {
@@ -58,37 +66,54 @@ class User implements UserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\NotBlank(message="le password est obligatoire")
-     * @Groups({"user:read", "user:write"})
+     * @Groups({"user:write"})
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"user:read", "user:write"})
+     * @Assert\NotBlank(message=" le prénom ne peut pas etre vide")
+     * @Assert\Regex(
+     *  pattern = "/^[A-Z][a-z]+$/",
+     *  message = "le prénom commence par une lettre majuscule"
+     * )
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"user:read", "user:write"})
+     * @Assert\NotBlank(message=" le nom ne peut pas etre vide")
+     * @Assert\Regex(
+     *  pattern = "/^[A-Z]+$/",
+     *  message = " le nom est en majuscule"
+     * )
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"user:read", "user:write"})
+     * @Assert\NotBlank(message=" le téléphone ne peut pas etre vide")
+     * @Assert\Regex(
+     *  pattern = "/^7[7|6|8|0][0-9]{7}$/",
+     *  message = "le numero doit être orange, free ou expresso"
+     * )
      */
     private $telephone;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"user:read", "user:write"})
+     * @Assert\NotBlank(message=" le genre ne peut pas etre vide")
      */
     private $genre;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"user:read", "user:write"})
+     * @Assert\NotBlank(message=" l'adresse email ne peut pas etre vide")
      */
     private $email;
 
@@ -97,6 +122,7 @@ class User implements UserInterface
     /**
      * @ORM\ManyToOne(targetEntity=Profil::class, inversedBy="user")
      * @Groups({"user:read", "user:write"})
+     * @Assert\NotBlank(message=" le profil ne peut pas etre vide")
      */
     private $profil;
 
@@ -108,7 +134,8 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="blob")
-     * @Groups({"user:read","write"})
+     * @Groups({"user:write"})
+     * @Assert\NotBlank(message=" la photo ne peut pas etre vide")
      */
     private $photo;
 

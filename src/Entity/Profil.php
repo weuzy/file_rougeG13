@@ -2,28 +2,33 @@
 
 namespace App\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProfilRepository;
 use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Controller\ArchivageProfilController;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProfilRepository::class)
  * @ApiResource(
  * attributes = {
- *  "security" = "is_granted('ROLE_ADMIN')",
- *  "security_message" = "vous n'avez pas accés à cette ressource"
+    * "normalizationContext"={"groups"={"read"}},
+    * "denormalizationContext"={"groups"={"write"}},
+    *  "security" = "is_granted('ROLE_ADMIN')",
+    *  "security_message" = "vous n'avez pas accés à cette ressource",
+    *  "pagination_enabled" = true,
+    *  "pagination_items_per_page" = 3
  * },
  * collectionOperations = {"post", "get"},
  * itemOperations = {"put","get", "delete_profil" = {
-    * "method" = "PUT",
-    * "path" = "/profils/{id}/archivages",
-    * "controller" = ArchivageProfilController::class
+ * "method" = "PUT",
+ * "path" = "/profils/{id}/archivages",
+ * "controller" = ArchivageProfilController::class
  * }
- * }
+ * },
  * )
  */
 class Profil
@@ -32,22 +37,26 @@ class Profil
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("read")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message = "le libellé ne peut pas être vide")
+     * @Groups({"read", "write"})
      */
     private $libelle;
 
     /**
      * @ORM\OneToMany(targetEntity=User::class, mappedBy="profil")
+     *  @Groups("read")
      */
     private $user;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups("read")
      */
     private $archives;
 
