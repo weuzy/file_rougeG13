@@ -7,19 +7,29 @@ use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\Common\Collections\ArrayCollection;
+use App\Controller\ArchivageGroupesDeCompetences;
 use App\Repository\GroupesDeCompetencesRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=GroupesDeCompetencesRepository::class)
  * @ApiResource(
  * attributes= {
+        *"normalizationContext" = {"groups":"read"},
+        *"denormalizationContext" = {"groups":"write"},
         *"security" = "is_granted('ROLE_ADMIN')",
         *"security_message" = "vous n'avez pas accés à cette ressource",
         *"pagination_enabled" = true,
         *"pagination_items_per_page" = 3
     *},
  * collectionOperations = {"get", "post"},
- * itemOperations = {"put", "get"}
+ * itemOperations = {"put", "get", "delete_groupesDeCompetences" = {
+        * "method" = "PUT",
+        * "path" = "/groupes_de_competences/{id}/archivages",
+        * "controller" = ArchivageGroupesDeCompetences::class
+    * }
+ * }
  * )
  */
 class GroupesDeCompetences
@@ -28,35 +38,48 @@ class GroupesDeCompetences
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message = "le libelle ne peut pas être vide")
+     * @Groups({"read", "write"})
      */
     private $libelle;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message = "le libelle ne peut pas être vide")
+     * @Groups({"read", "write"})
      */
     private $descriptif;
 
     /**
      * @ORM\ManyToMany(targetEntity=Competences::class, mappedBy="groupe_de_competences")
      * @ApiSubresource
+     * @Assert\NotBlank(message = "les compétences ne peuvent pas être vide")
+     * @Groups({"read", "write"})
      */
     private $competences;
 
     /**
      * @ORM\ManyToMany(targetEntity=Tag::class, mappedBy="groupe_de_competences")
-     * @ApiSubresource
+     * @Groups({"read"})
      */
     private $tags;
 
     /**
      * @ORM\ManyToMany(targetEntity=Referentiel::class, mappedBy="groupeDeCompetence")
+     * @Groups({"read"})
      */
     private $referentiels;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $archives;
 
     public function __construct()
     {
@@ -174,6 +197,18 @@ class GroupesDeCompetences
             $this->referentiels->removeElement($referentiel);
             $referentiel->removeGroupeDeCompetence($this);
         }
+
+        return $this;
+    }
+
+    public function getArchives(): ?bool
+    {
+        return $this->archives;
+    }
+
+    public function setArchives(bool $archives): self
+    {
+        $this->archives = $archives;
 
         return $this;
     }
