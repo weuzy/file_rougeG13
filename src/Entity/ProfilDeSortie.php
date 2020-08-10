@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -14,10 +15,12 @@ use App\Controller\ArchivageProfilDeSortieController;
  * @ORM\Entity(repositoryClass=ProfilDeSortieRepository::class)
  * @ApiResource(
  * attributes = {
- * "normalizationContext" = {"groups":"read"},
- * "denormalizationContext" = {"groups":"write"},
-    *  "security" = "is_granted('ROLE_ADMIN')",
-    *  "security_message" = "vous n'avez pas accés à cette ressource",
+    * "normalizationContext" = {"groups":"read"},
+    * "denormalizationContext" = {"groups":"write"},
+    * "security" = "is_granted('ROLE_ADMIN')",
+    * "security_message" = "vous n'avez pas accés à cette ressource",
+    * "pagination_enabled" = true,
+    * "pagination_items_per_page" = 3
  * },
  * collectionOperations = {"post", "get"},
  * itemOperations = {"put", "get", "delete_profil_de_sortie"= {
@@ -41,6 +44,7 @@ class ProfilDeSortie
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read", "write"})
+     * @Assert\NotBlank(message="ce champs est obligatoire")
      */
     private $libelle;
 
