@@ -7,6 +7,7 @@ use App\Repository\CompetencesRepository;
 use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=CompetencesRepository::class)
@@ -23,11 +24,13 @@ class Competences
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"referentiel:read","referentiel:write"})
      */
     private $libelle;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"referentiel:read","referentiel:write"})
      */
     private $descriptif;
 
@@ -38,6 +41,7 @@ class Competences
 
     /**
      * @ORM\ManyToMany(targetEntity=Niveau::class, mappedBy="competence")
+     * @Groups({"referentiel:read"})
      */
     private $niveaux;
 

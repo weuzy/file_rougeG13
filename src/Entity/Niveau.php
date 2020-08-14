@@ -6,6 +6,7 @@ use App\Repository\NiveauRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=NiveauRepository::class)
@@ -21,16 +22,19 @@ class Niveau
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Groups({"referentiel:read","referentiel:write"})
      */
     private $libelle;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Groups({"referentiel:read","referentiel:write"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Groups({"referentiel:read","referentiel:write"})
      */
     private $criter_d_evaluation;
 
