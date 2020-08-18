@@ -20,7 +20,13 @@ use Symfony\Component\Validator\Constraints as Assert;
         *"security" = "is_granted('ROLE_ADMIN')",
         *"security_message" = "vous n'avez pas accés à cette ressource",
     *},
-    *collectionOperations = {"post", "get"},
+    *collectionOperations = {"get",
+    *"add_groupeDeTag" = {
+        *"method" = "POST",
+        *"path" = "/addGroupeDeTags",
+        *"route_name" = "add_groupeTag"
+    * }
+*},
     *itemOperations = {"put", "get", "delete_groupeDeTag" = {
         *"method" = "PUT",
         *"path" = "/groupe_de_tags/{id}/archivages",
@@ -55,6 +61,7 @@ class GroupeDeTag
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"write"})
      */
     private $archives;
 

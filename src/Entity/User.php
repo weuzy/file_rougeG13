@@ -29,15 +29,17 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
         *"pagination_enabled" = true,
         *"pagination_items_per_page" = 3
     *},
-    *collectionOperations = {"post", "get"},
+    *collectionOperations = {"get", 
+    * "add_user" = {
+        *"method" = "POST",
+        *"path" = "/users",
+        *"route_name" = "add_user"
+    * }
+*},
     *itemOperations = {"put","get", "delete_user" = {
     *"method" = "PUT",
     *"path" = "/users/{id}/archivages",
     *"controller" = ArchivageUser::class
-    * }, "add_user" = {
-        *"method" = "POST",
-        *"path" = "/users",
-        *"route_name" = "add_user"
     * }
  * }
  * )
@@ -135,7 +137,6 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="blob")
      * @Groups({"user:write"})
-     * @Assert\NotBlank(message=" la photo ne peut pas etre vide")
      */
     private $photo;
 

@@ -23,7 +23,13 @@ use Symfony\Component\Validator\Constraints as Assert;
         *"pagination_enabled" = true,
         *"pagination_items_per_page" = 3
     *},
- * collectionOperations = {"get", "post"},
+ * collectionOperations = {"get", 
+ * "add_groupeComp" = {
+        *"method" = "POST",
+        *"path" = "/groupesDeCompetences",
+        *"route_name" = "add_groupeComp"
+    * }
+ * },
  * itemOperations = {"put", "get", "delete_groupesDeCompetences" = {
         * "method" = "PUT",
         * "path" = "/groupes_de_competences/{id}/archivages",
@@ -51,7 +57,7 @@ class GroupesDeCompetences
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message = "le libelle ne peut pas être vide")
+     * @Assert\NotBlank(message = "le descriptif ne peut pas être vide")
      * @Groups({"read", "write"})
      */
     private $descriptif;
@@ -78,6 +84,7 @@ class GroupesDeCompetences
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"read"})
      */
     private $archives;
 
