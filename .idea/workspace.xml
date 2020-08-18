@@ -10,7 +10,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09088045-4158-49d7-8bcb-a2fb1db5eb04" name="Default Changelist" comment="" />
+    <list default="true" id="72f44c04-7aa1-4be4-8a05-d620232d9fdb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/file_rougeG13-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/file_rougeG13-master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/file_rougeG13.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/file_rougeG13.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PromoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PromoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Apprenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Apprenant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Groupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Groupe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +36,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -113,6 +128,22 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fur15uTfLRbf7KzTgaAkYRc0XX" />
@@ -122,16 +153,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../file_rougeG13" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="09088045-4158-49d7-8bcb-a2fb1db5eb04" name="Default Changelist" comment="" />
+      <changelist id="72f44c04-7aa1-4be4-8a05-d620232d9fdb" name="Default Changelist" comment="" />
       <created>1597078601136</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -144,6 +176,17 @@
       <workItem from="1597170161641" duration="6916000" />
       <workItem from="1597180229981" duration="2229000" />
       <workItem from="1597227255669" duration="1937000" />
+      <workItem from="1597240456467" duration="780000" />
+      <workItem from="1597249908173" duration="39000" />
+      <workItem from="1597249972077" duration="22000" />
+      <workItem from="1597441220645" duration="607000" />
+      <workItem from="1597482548552" duration="196000" />
+      <workItem from="1597490564606" duration="12834000" />
+      <workItem from="1597531849626" duration="2069000" />
+      <workItem from="1597563617991" duration="801000" />
+      <workItem from="1597564827402" duration="1594000" />
+      <workItem from="1597668432639" duration="53000" />
+      <workItem from="1597746107641" duration="720000" />
     </task>
     <servers />
   </component>
@@ -171,22 +214,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1597090658015" />
-    <state x="691" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597085643485">
+    <state x="691" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597746148358">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="691" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597085643485" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1597179064296">
+    <state x="691" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597746148358" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1597564416036">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597179064296" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597564416036" />
     <state x="797" y="264" key="NewPhpFileDialog" timestamp="1597090822895">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="797" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1597090822895" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1597149788527">
+    <state x="142" y="0" key="SettingsEditor" timestamp="1597501165202">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597149788527" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597501165202" />
+    <state x="413" y="214" width="619" height="282" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1597498674539">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="413" y="214" width="619" height="282" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1280.680@0.0.1280.680" timestamp="1597498674539" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

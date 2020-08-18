@@ -23,7 +23,7 @@ class Apprenant
     private $statut;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $niveau;
 
@@ -32,6 +32,10 @@ class Apprenant
      */
     private $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Groupe::class, inversedBy="apprenant")
+     */
+    private $groupe;
     /**
      * @ORM\ManyToOne(targetEntity=ProfilDeSortie::class, inversedBy="apprenants")
      */
@@ -50,6 +54,18 @@ class Apprenant
     public function setStatut(string $statut): self
     {
         $this->statut = $statut;
+
+        return $this;
+    }
+
+    public function getGroupe(): ?Groupe
+    {
+        return $this->groupe;
+    }
+
+    public function setGroupe(?Groupe $groupe): self
+    {
+        $this->groupe = $groupe;
 
         return $this;
     }

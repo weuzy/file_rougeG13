@@ -55,7 +55,7 @@ class Groupe
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $periode;
 
@@ -81,6 +81,12 @@ class Groupe
      */
     private $date_creation;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Apprenant::class, mappedBy="groupe")
+     * @ApiSubresource
+     * @Groups({"groupe:write","groupe:read"})
+     */
+    private $apprenant;
 
     /**
      * @ORM\ManyToMany(targetEntity=User::class, inversedBy="groupes")
@@ -96,6 +102,24 @@ class Groupe
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    /**
+     * @return Collection|Etudiant[]
+     */
+    public function getApprenant(): Collection
+    {
+        return $this->apprenant;
+    }
+
+    public function addApprenant(Apprenant $apprenant): self
+    {
+        if (!$this->apprenant->contains($apprenant)) {
+            $this->apprenant[] = $apprenant;
+            $apprenant->setGroupe($this);
+        }
+
+        return $this;
     }
 
     public function getPeriode(): ?string

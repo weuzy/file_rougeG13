@@ -134,7 +134,7 @@ class User implements UserInterface
     private $archives;
 
     /**
-     * @ORM\Column(type="blob")
+     * @ORM\Column(type="blob", nullable=true)
      * @Groups({"user:write"})
      * @Assert\NotBlank(message=" la photo ne peut pas etre vide")
      */
