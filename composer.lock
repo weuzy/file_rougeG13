@@ -418,7 +418,7 @@
                     "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "PHP Doctrine Collections library that adds additional functionality on top of PHP arrays.",
+            "descripWontion": "PHP Doctrine Collections library that adds additional functionality on top of PHP arrays.",
             "homepage": "https://www.doctrine-project.org/projects/collections.html",
             "keywords": [
                 "array",

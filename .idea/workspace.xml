@@ -19,49 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8cc9137-2593-4156-ba6b-68d9acd08052" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/file_rougeG13.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/deprecations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20200810203404.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20200811163232.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ArchivageReferentielController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ReferentielController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+    <list default="true" id="673f057e-4a07-4a29-9e31-faff44957caf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Entity/Brief.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Chat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/LivrablePartiel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Ressources.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/BriefMaPromoRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/BriefRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ChatRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/LivrablePartielRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/RessourcesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/api_platform.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20200810143905.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Competences.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Competences.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/GroupesDeCompetences.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/GroupesDeCompetences.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Niveau.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Niveau.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Referentiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Referentiel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="composer.json" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -162,7 +140,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1fv8mHzhGGDI2ectSDkE6n50ew3" />
+  <component name="ProjectId" id="1gMZ4avn3w1E36PfOe1Emc8xWMX" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -174,26 +152,19 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c8cc9137-2593-4156-ba6b-68d9acd08052" name="Default Changelist" comment="" />
-      <created>1597087363136</created>
+      <changelist id="673f057e-4a07-4a29-9e31-faff44957caf" name="Default Changelist" comment="" />
+      <created>1597926235004</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1597087363136</updated>
-      <workItem from="1597087364224" duration="10766000" />
-      <workItem from="1597149359080" duration="6013000" />
-      <workItem from="1597162735227" duration="17876000" />
-      <workItem from="1597227840535" duration="6297000" />
-      <workItem from="1597313956492" duration="14621000" />
-      <workItem from="1597419494354" duration="40000" />
+      <updated>1597926235004</updated>
+      <workItem from="1597926237224" duration="5521000" />
+      <workItem from="1597959005843" duration="1571000" />
+      <workItem from="1598005956545" duration="5061000" />
     </task>
     <servers />
   </component>
@@ -216,17 +187,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="509" y="237" width="507" height="342" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597169763267">
+    <state x="575" y="324" width="376" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597959026120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="509" y="237" width="507" height="342" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1597169763267" />
-    <state x="355" y="0" width="992" height="724" key="SettingsEditor" timestamp="1597259556431">
+    <state x="575" y="324" width="376" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1597959026120" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597420801415">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="355" y="0" width="992" height="724" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1597259556431" />
-    <state x="564" y="311" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597088499163">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="564" y="311" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1597088499163" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597420801415" />
   </component>
 </project>
